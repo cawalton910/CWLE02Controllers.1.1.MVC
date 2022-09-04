@@ -1,0 +1,30 @@
+﻿@model string[]
+@{
+    ViewData["Title"] = "Bar Graph";
+}
+
+<h2>@ViewData["Title"]</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Item</td>
+            <td>Graph</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var value in Model)
+        {
+            <tr>
+                <td>
+                    @value
+                </td>
+                <td>                
+                    @for(int i=0; i<Int32.Parse(value.Substring(value.LastIndexOf('~') + 1)); i++){
+                        @:&equiv;
+                    }                                      
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
